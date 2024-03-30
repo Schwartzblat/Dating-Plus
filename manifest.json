@@ -1,0 +1,39 @@
+{
+  "name": "dating-Plus",
+  "version": "1.0.0",
+  "description": "",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "webNavigation",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.okcupid.com/*",
+        "https://*.bumble.com/*"
+      ],
+      "js": [
+        "./index.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "host_permissions": [
+    "https://www.okcupid.com/",
+    "https://*.bumble.com/*"
+  ],
+  "manifest_version": 3,
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "packed.js"
+      ],
+      "matches": [
+        "https://www.okcupid.com/*",
+        "https://*.bumble.com/*"
+      ]
+    }
+  ]
+}
