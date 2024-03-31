@@ -98,7 +98,9 @@ const bumble_init_response_hook = () => {
 
         if (ret?.body?.[0]?.client_encounters?.results) {
             current_match_index = 0
-            return matches_handler(ret);
+            ret = matches_handler(ret);
+            match_handler();
+            return ret;
         }
         return ret;
     };
