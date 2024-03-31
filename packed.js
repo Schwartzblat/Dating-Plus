@@ -72,11 +72,11 @@ const bumble_init_response_hook = () => {
 
     const match_handler = () => {
         const match = current_matches[current_match_index];
-        if (!match?.user?.their_vote || match.user.their_vote === '1') {
+        if (!match?.user?.their_vote || match.user.their_vote === 1) {
             console.log(`${match.user.name} haven't voted yet`);
             return;
         }
-        const is_match = match.user.their_vote === '2';
+        const is_match = match.user.their_vote === 2;
 
         try {
             const v_icon = document.getElementsByClassName('encounters-action tooltip-activator encounters-action--like')[0];
